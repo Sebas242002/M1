@@ -10,7 +10,11 @@ function BinarioADecimal(num) {
    return decimal;
 }
 function DecimalABinario(num) {
-   const binario = num.toString(2);
+   let binario = '';
+   while (num > 0) {
+      binario = (num % 2) + binario;
+      num = Math.floor(num / 2);
+   }
    return binario;
 }
 
@@ -18,4 +22,3 @@ module.exports = {
    BinarioADecimal,
    DecimalABinario,
 };
-console.log(BinarioADecimal(10));
